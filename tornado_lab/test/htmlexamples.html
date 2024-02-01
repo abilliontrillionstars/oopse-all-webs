@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf8>
+    </head>
+<body>
+    
+<script>
+function fiddler(n1){
+    var n = document.getElementById(n1);
+    if(!n){
+        return;
+    }
+    var L = [];
+    for(var i=1;i<arguments.length;++i)
+        L.push(arguments[i]);
+    txt = L.join("\n");
+    var p = n.parentNode;
+    var div = document.createElement("div");
+    p.insertBefore(div,n);
+    var tbox = document.createElement("textarea");
+    tbox.rows = 12;
+    tbox.cols = 60;
+    tbox.value = txt
+    tbox.style.cssFloat = "left";
+    div.appendChild(tbox);
+    var sq = document.createElement("div");
+    sq.style.border="1px solid black";
+    sq.style.cssFloat="right";
+    sq.innerHTML=txt;
+    sq.style.width='50%';
+    div.appendChild(sq);
+    var b = document.createElement("button");
+    b.innerHTML="&rarr;";
+    b.addEventListener("click",function(){
+        var t = tbox.value;
+        sq.innerHTML=t;
+    });
+    div.appendChild(b);
+    var hr = document.createElement("hr");
+    hr.style.clear="both";
+    p.insertBefore(hr,n);
+}
+</script>
+
+<script id='p'>
+fiddler('p',"<p>This is my paragraph. Lorem ipsum dolor sit amet",
+"adquam quoquo puntavit nos scriptorium plasquo. Ad aliquat",
+"non in mens rea. Forma pauperis introphic quisling.</p>",
+"<div>This is another paragraph. Lorem ipsum dolor sit amet",
+"adquam quoquo puntavit nos scriptorium plastico. Ad aliquat",
+"non in mens rea. Forma pauperis introphic quisling.</div>",
+"This has<br>a break");
+</script>
+
+<script id='span'>
+fiddler("span",
+"This is <span title='really neat!'>some text</span> that we spanned.");
+</script>
+
+<script id='pre'>
+fiddler('pre',
+'<pre>void main(){',
+'    printf("Hello, world");',
+'    return;',
+'}</pre>');
+</script>
+
+<script id='ulol'>
+fiddler('ulol',
+"<ul>",
+"<li>Item 1</li>",
+"<li>Item 2</li>",
+"<li>Item 3</li>",
+"</ul>",
+"<ol>",
+"<li>Bread</li>",
+"<li>Milk</li>",
+"<li>Eggs</li>",
+"</ol>");
+</script>
+
+<script id='table'>
+fiddler("table",
+"<table>",
+"<tr>",
+"<th>Name<th>HW<th>Midterm<th>Final",
+"</tr>",
+"<tr><td>Alice</td><td>95<td>88<td>89</tr>",
+"<tr><td>Bob<td>78<td>75<td>72</tr>",
+"<tr><td>Carol</td><td>80<td>82<td>86</tr>",
+"</table>");
+</script>
+
+<script id='links'>
+fiddler('links',
+"<a href='http://www.ssucet.org'>Fancy!</a><br>",
+"<img src='https://www.ssucet.org/pluginfile.php/47/mod_label/intro/reprap1a.jpg'><br>");
+</script>
+
+<script id='ex1'>
+fiddler('ex1',
+'<P>Hello there! Welcome to my site!</P>',
+'<div>Some bookmarks:',
+'<UL>',
+'<LI>This is a <A href="http://www.ssucet.org">Cool site</a><img width=150 src="ssucet.png" alt="pic">',
+'<li>This is an <a href="http://www.ssugames.org">even cooler site</a>...',
+'<li>And finally, a site that is <a href="http://www.shawnee.edu">not so cool :-)</a>',
+'</div>');
+</script>
+</body>
+</html>

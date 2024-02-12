@@ -6,3 +6,10 @@ html
     color: sandybrown;
 }
 
+table
+{
+    padding: 10pt;
+    border: 4pt solid aquamarine;
+    background-color: seashell;
+}
+

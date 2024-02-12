@@ -6,7 +6,7 @@ let numbers = ["0", "34", "10", "21", "28", "4", "18", "9", "27", "22", "12", "3
 
 function doRoulette()
 {
-    let roll = Math.floor(Math.random() * length(numbers));
+    let roll = Math.floor(Math.random() * numbers.length);
     let color = "";
     let isEven = "";
     let isPassed = "";

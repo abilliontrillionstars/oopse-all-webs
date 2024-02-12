@@ -4,14 +4,15 @@ import tornado.web
 import index
 import os
 
-settings = {"static_path": os.path.join(os.path.dirname(__file__), "static")}
+HTMLDIR = os.path.abspath(os.path.join(os.path.dirname(__file__),"..","html"))
 
 def makeApp():
     endpoints=[
         ("/", index.Handler)
     ]
-    app = tornado.web.Application(endpoints)
+    app = tornado.web.Application(endpoints, static_path=HTMLDIR)
     app.listen(8000)
+    
     return app
 
 if __name__ == "__main__":

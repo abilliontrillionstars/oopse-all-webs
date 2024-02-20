@@ -1,0 +1,22 @@
+html 
+{
+    font-family: Lucida Sans;
+    font-size: large;
+    background-color: darkgreen;
+    color: lightgreen;
+}
+
+table
+{
+    padding: 10pt;
+    border: 4pt solid green;
+    background-color: #444;
+}
+
+button
+{
+    padding: 3pt;
+    color: white;
+    background-color: crimson;
+}
+

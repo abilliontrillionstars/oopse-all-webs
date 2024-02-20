@@ -28,4 +28,15 @@ function doRoulette()
 
 
     console.log("This visit's roulette details are: \n", roll, color, isEven, isPassed);
+    let rouletteResult = [roll, color, isEven, isPassed]
+
+    let resultEntry = document.createElement("tr");
+    for(let i=0;i<rouletteResult.length;++i)
+    {
+        let td = document.createElement("td");
+        resultEntry.appendChild(td);
+        let txt = document.createTextNode(rouletteResult[i]);
+        td.appendChild(txt);
+    }
+    document.getElementById("resultTable").appendChild(resultEntry);
 }

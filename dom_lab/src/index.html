@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-    <html style="font-family: Lucida Sans; font-size: large; background-color: cadetblue; color: sandybrown;">
+    <html>
         <meta charset=utf8>
+        <link rel=stylesheet href="/static/style.css">
     <head></head>
     <body>
-        <div style="float: right;">    
-            ...
-            <i>No single one can possess greater wisdom than the many Scholars who are elected by all men for their wisdom.
-            Yet we can. We do. We have fought against saying it, but now it is said. We do not care.
-            We forget all men, all laws and all things save our metals and our wires. So much is still to be learned!
-            So long a road lies before us, and what care we if we must travel it alone!</i>
-            ...
+        <div style="background-color: sienna; color: goldenrod; border: 3pt solid green; padding: 5pt;">    
+            Roulette is a gambling game in which a ball is dropped onto a revolving wheel (the
+            roulette wheel) with numbered compartments, the players betting on the number at 
+            which the ball will come to rest. You're not betting anything here, other than 
+            your time. The results of your roulette will be logged in the table below. 
         </div>
         <script src="/static/roulette.js"></script>
-        <button type="button" onclick="doRoulette()">Log Roulette</button>
+        <br><button type="button" onclick="doRoulette()">Roulette!</button>
+        <table id="resultTable">
+            <tr style="font-size: larger;">
+                <td><span style="color: black;">Number</span></td>
+                <td><span style="color: crimson;">Color</span></td>
+                <td><span style="color: black;">Pair/Impaire</span></td>
+                <td><span style="color: crimson;">Passe/Impasse</span></td>
+            </tr>
+        </table>
 
     </body>
 </html>
